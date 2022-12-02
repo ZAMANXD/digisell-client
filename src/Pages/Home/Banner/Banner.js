@@ -17,10 +17,10 @@ const Banner = () => {
         <div className="lg:w-1/2 lg:pl-10 w-full" data-aos="fade-up">
           <h3 className="lsp-3">Sell all your faltu laptops here</h3>
           <h1 className="text-4xl font-bold mb-4">
-            Be Ready To Spoil Every Moment
+            Buy and sell all the garbage products
           </h1>
           <p>
-            Here you can buy and sell used Camera. You can also find new Camera
+            Here you can buy and sell used laptop. You can also find new laptops
             for your home, office, shops.
           </p>
 
