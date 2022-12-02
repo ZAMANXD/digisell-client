@@ -6,7 +6,7 @@ A private repository contains source-code for Digisell project.
 
 ### GitHub repository link (Server Side): [https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-ZAMANXD](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-ZAMANXD)
 
-### Netlify live site link: [https://spectacular-cobbler-666875.netlify.app/](https://spectacular-cobbler-666875.netlify.app/)
+### Netlify live site link: [https://joyful-heliotrope-a94038.netlify.app/](https://joyful-heliotrope-a94038.netlify.app/)
 
 ---
 
