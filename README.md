@@ -4,7 +4,7 @@ A private repository contains source-code for Digisell project.
 
 ### GitHub repository link (Client side): [https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-ZAMANXD](https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-ZAMANXD)
 
-### GitHub repository link (Server Side): [https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-ZAMANXD](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-ZAMANXD)
+### GitHub repository link (Server Side): [https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-ZAMANXD](https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-ZAMANXD)
 
 ### Netlify live site link: [https://joyful-heliotrope-a94038.netlify.app/](https://joyful-heliotrope-a94038.netlify.app/)
 
@@ -43,10 +43,3 @@ A private repository contains source-code for Digisell project.
 9. Tanstack Query
 10. React Query
 11. Axios
-
-## How to run this project
-
-1. Clone this repo
-2. Run `npm install`
-3. Run `npm start`
-4. Enjoy
