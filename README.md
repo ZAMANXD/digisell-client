@@ -1,12 +1,17 @@
-# Welcome to E-Trade
+# Wedemy project for Service Review Assignment ft. Programming Hero
 
-Live Link: [E-Trade](https://e-trade-a12.web.app/)
+A private repository contains source-code for Wedemy project.
 
-Server Side Repo Link: [E-Trade Server](https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-MarufAlAslam)
+### GitHub repository link (Client side): [https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-ZAMANXD](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-ZAMANXD)
+
+### GitHub repository link (Server Side): [https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-ZAMANXD](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-ZAMANXD)
+
+### Netlify live site link: [https://spectacular-cobbler-666875.netlify.app/](https://spectacular-cobbler-666875.netlify.app/)
 
 ---
 
 ## Features
+
 1. User can buy and sell products.
 2. User can see all products.
 3. User can see all products by category.
@@ -26,6 +31,7 @@ Server Side Repo Link: [E-Trade Server](https://github.com/programming-hero-web-
 17. Admin can see all admins.
 
 ## Technology
+
 1. React
 2. React Router
 3. React Hook Form
@@ -38,8 +44,8 @@ Server Side Repo Link: [E-Trade Server](https://github.com/programming-hero-web-
 10. React Query
 11. Axios
 
-
 ## How to run this project
+
 1. Clone this repo
 2. Run `npm install`
 3. Run `npm start`
