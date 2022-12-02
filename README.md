@@ -8,6 +8,11 @@ A private repository contains source-code for Digisell project.
 
 ### Netlify live site link: [https://joyful-heliotrope-a94038.netlify.app/](https://joyful-heliotrope-a94038.netlify.app/)
 
+### Admin Login Credential
+
+Email: admin@admin.com
+pass: 123456789
+
 ---
 
 ## Features
