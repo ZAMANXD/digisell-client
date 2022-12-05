@@ -23,11 +23,14 @@ const MyProducts = () => {
   } = useQuery({
     queryKey: ['products'],
     queryFn: () =>
-      fetch(`http://localhost:5000/productsforseller/?email=${user.email}`, {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-      }).then((res) => res.json()),
+      fetch(
+        `https://assignment-12-server-side-eta.vercel.app/productsforseller/?email=${user.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+        }
+      ).then((res) => res.json()),
   });
   const changeStatus = (id) => {
     if (status === 'available') {
@@ -36,7 +39,7 @@ const MyProducts = () => {
       setStatus('available');
     }
 
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://assignment-12-server-side-eta.vercel.app/products/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +64,7 @@ const MyProducts = () => {
     } else {
       setIsAdvertisement('no');
     }
-    fetch(`http://localhost:5000/advertise/${id}`, {
+    fetch(`https://assignment-12-server-side-eta.vercel.app/advertise/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -89,13 +92,16 @@ const MyProducts = () => {
   };
 
   const updatePrice = (id) => {
-    fetch(`http://localhost:5000/updateprice/${id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ price: newPrice }),
-    })
+    fetch(
+      `https://assignment-12-server-side-eta.vercel.app/updateprice/${id}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ price: newPrice }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

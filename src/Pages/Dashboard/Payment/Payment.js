@@ -14,7 +14,9 @@ const Payment = () => {
   const { data: booking = [], isLoading } = useQuery({
     queryKey: ['booking', id],
     queryFn: () =>
-      fetch(`http://localhost:5000/booking/${id}`).then((res) => res.json()),
+      fetch(
+        `https://assignment-12-server-side-eta.vercel.app/booking/${id}`
+      ).then((res) => res.json()),
   });
   console.log(booking.price);
   return (

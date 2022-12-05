@@ -4,7 +4,7 @@ import { AuthContext } from '../Contexts/AuthProvider';
 
 const SellerRoute = () => {
   const { user } = useContext(AuthContext);
-  const url = `http://localhost:5000/user?email=${user.email}`;
+  const url = `https://assignment-12-server-side-eta.vercel.app/user?email=${user.email}`;
 
   useEffect(() => {
     axios.get(url).then((res) => console.log(res.data));

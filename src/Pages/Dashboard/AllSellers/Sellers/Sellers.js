@@ -10,17 +10,22 @@ const Sellers = () => {
   } = useQuery({
     queryKey: ['users'],
     queryFn: () =>
-      fetch('http://localhost:5000/users').then((res) => res.json()),
+      fetch('https://assignment-12-server-side-eta.vercel.app/users').then(
+        (res) => res.json()
+      ),
   });
 
   const deleteSeller = (email) => {
-    fetch(`http://localhost:5000/users?email=${email}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ role: 'user' }),
-    })
+    fetch(
+      `https://assignment-12-server-side-eta.vercel.app/users?email=${email}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ role: 'user' }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data) {
@@ -31,13 +36,16 @@ const Sellers = () => {
   };
 
   const makeAdmin = (email) => {
-    fetch(`http://localhost:5000/users?email=${email}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ role: 'admin' }),
-    })
+    fetch(
+      `https://assignment-12-server-side-eta.vercel.app/users?email=${email}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ role: 'admin' }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data) {
@@ -48,13 +56,16 @@ const Sellers = () => {
   };
 
   const verifySeller = (email) => {
-    fetch(`http://localhost:5000/verify?email=${email}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ isVerified: true }),
-    })
+    fetch(
+      `https://assignment-12-server-side-eta.vercel.app/verify?email=${email}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ isVerified: true }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data) {

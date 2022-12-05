@@ -30,7 +30,7 @@ const AddProductForm = () => {
   useEffect(() => {
     // use axios to get categories from database
     axios
-      .get('http://localhost:5000/categories')
+      .get('https://assignment-12-server-side-eta.vercel.app/categories')
       .then((res) => {
         setCategory(res.data);
       })
@@ -74,7 +74,7 @@ const AddProductForm = () => {
             status: 'available',
           };
 
-          fetch('http://localhost:5000/product', {
+          fetch('https://assignment-12-server-side-eta.vercel.app/product', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

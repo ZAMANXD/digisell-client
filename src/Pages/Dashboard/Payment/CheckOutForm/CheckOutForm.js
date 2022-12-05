@@ -11,14 +11,17 @@ const CheckOutForm = ({ booking }) => {
   const elements = useElements();
 
   useEffect(() => {
-    fetch('http://localhost:5000/create-payment-intent', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-      body: JSON.stringify({ price }),
-    })
+    fetch(
+      'https://assignment-12-server-side-eta.vercel.app/create-payment-intent',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+        body: JSON.stringify({ price }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setClientSecret(data.clientSecret);
@@ -73,20 +76,23 @@ const CheckOutForm = ({ booking }) => {
     console.log('paymentIntent:', paymentIntent);
 
     // store payment info to db
-    fetch(`http://localhost:5000/booking/${booking._id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        isPaid: true,
-        paymentId: paymentIntent.id,
-        paymentBy: booking.username,
-        amount: paymentIntent.amount / 100,
-        currency: paymentIntent.currency,
-        paymementMethod: paymentIntent.payment_method_types[0],
-      }),
-    })
+    fetch(
+      `https://assignment-12-server-side-eta.vercel.app/booking/${booking._id}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          isPaid: true,
+          paymentId: paymentIntent.id,
+          paymentBy: booking.username,
+          amount: paymentIntent.amount / 100,
+          currency: paymentIntent.currency,
+          paymementMethod: paymentIntent.payment_method_types[0],
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

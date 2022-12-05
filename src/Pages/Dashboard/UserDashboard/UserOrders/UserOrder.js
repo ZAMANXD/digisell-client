@@ -8,11 +8,14 @@ const UserOrder = () => {
   const { data: bookingData = [] } = useQuery({
     queryKey: ['bookingData'],
     queryFn: () =>
-      fetch(`http://localhost:5000/buyerbookings?email=${user.email}`, {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-      }).then((res) => res.json()),
+      fetch(
+        `https://assignment-12-server-side-eta.vercel.app/buyerbookings?email=${user.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+        }
+      ).then((res) => res.json()),
   });
   return (
     <div>

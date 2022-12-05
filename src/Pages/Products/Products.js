@@ -12,15 +12,17 @@ const Products = () => {
   const { data: products = [], isLoading } = useQuery({
     queryKey: ['products'],
     queryFn: () =>
-      fetch('http://localhost:5000/products').then((res) => res.json()),
+      fetch('https://assignment-12-server-side-eta.vercel.app/products').then(
+        (res) => res.json()
+      ),
   });
 
   const { data: productsbyseller = [], isLoading1 } = useQuery({
     queryKey: ['productsbyseller'],
     queryFn: () =>
-      fetch(`http://localhost:5000/productsbyseller?email=${user?.email}`).then(
-        (res) => res.json()
-      ),
+      fetch(
+        `https://assignment-12-server-side-eta.vercel.app/productsbyseller?email=${user?.email}`
+      ).then((res) => res.json()),
   });
 
   return (

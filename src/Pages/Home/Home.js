@@ -10,7 +10,7 @@ const Home = () => {
   const [countAdvertisedItems, setCountAdvertisedItems] = React.useState(0);
 
   useEffect(() => {
-    fetch('http://localhost:5000/advertisedProducts')
+    fetch('https://assignment-12-server-side-eta.vercel.app/advertisedProducts')
       .then((res) => res.json())
       .then((data) => setCountAdvertisedItems(data.length));
   }, [countAdvertisedItems]);

@@ -10,11 +10,13 @@ const Reported = () => {
   } = useQuery({
     queryKey: ['products'],
     queryFn: () =>
-      fetch('http://localhost:5000/products').then((res) => res.json()),
+      fetch('https://assignment-12-server-side-eta.vercel.app/products').then(
+        (res) => res.json()
+      ),
   });
 
   const removeReport = (id) => {
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://assignment-12-server-side-eta.vercel.app/products/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +33,7 @@ const Reported = () => {
   };
 
   const deleteProduct = (id) => {
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://assignment-12-server-side-eta.vercel.app/products/${id}`, {
       method: 'DELETE',
     })
       .then((res) => res.json())

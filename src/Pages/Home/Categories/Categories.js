@@ -7,7 +7,9 @@ const Categories = () => {
   const { data: categories = [], isLoading } = useQuery({
     queryKey: ['categories'],
     queryFn: () =>
-      fetch('http://localhost:5000/categories/').then((res) => res.json()),
+      fetch(
+        'https://assignment-12-server-side-eta.vercel.app/categories/'
+      ).then((res) => res.json()),
   });
   return (
     <div className="py-10 lg:w-5/6 w-full mx-auto">

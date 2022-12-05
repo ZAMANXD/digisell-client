@@ -10,18 +10,23 @@ const Buyers = () => {
   } = useQuery({
     queryKey: ['users'],
     queryFn: () =>
-      fetch('http://localhost:5000/users').then((res) => res.json()),
+      fetch('https://assignment-12-server-side-eta.vercel.app/users').then(
+        (res) => res.json()
+      ),
   });
 
   console.log(users);
   const makeSeller = (email) => {
-    fetch(`http://localhost:5000/users?email=${email}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ role: 'seller' }),
-    })
+    fetch(
+      `https://assignment-12-server-side-eta.vercel.app/users?email=${email}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ role: 'seller' }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data) {
@@ -32,13 +37,16 @@ const Buyers = () => {
   };
 
   const makeAdmin = (email) => {
-    fetch(`http://localhost:5000/users?email=${email}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ role: 'admin' }),
-    })
+    fetch(
+      `https://assignment-12-server-side-eta.vercel.app/users?email=${email}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ role: 'admin' }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data) {

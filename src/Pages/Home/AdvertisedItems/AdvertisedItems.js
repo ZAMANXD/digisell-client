@@ -6,9 +6,9 @@ const AdvertisedItems = () => {
   const { data: advertisedProducts = [], isLoading } = useQuery({
     queryKey: ['advertisedProducts'],
     queryFn: () =>
-      fetch('http://localhost:5000/advertisedProducts').then((res) =>
-        res.json()
-      ),
+      fetch(
+        'https://assignment-12-server-side-eta.vercel.app/advertisedProducts'
+      ).then((res) => res.json()),
   });
   return (
     <div className="py-10 lg:w-5/6 w-full mx-auto">

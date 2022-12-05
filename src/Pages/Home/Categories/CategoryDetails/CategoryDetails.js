@@ -17,11 +17,13 @@ const CategoryDetails = () => {
   const { data: products = [], isLoading } = useQuery({
     queryKey: ['products'],
     queryFn: () =>
-      fetch('http://localhost:5000/products/').then((res) => res.json()),
+      fetch('https://assignment-12-server-side-eta.vercel.app/products/').then(
+        (res) => res.json()
+      ),
   });
 
   const handleModal = (id) => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://assignment-12-server-side-eta.vercel.app/product/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setModalData(data);

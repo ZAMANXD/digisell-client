@@ -31,7 +31,7 @@ const AuthProvider = ({ children }) => {
   };
 
   // update role to user on database by email
-  // fetch(`http://localhost:5000/user?email=${user.email}`, {
+  // fetch(`https://assignment-12-server-side-eta.vercel.app/user?email=${user.email}`, {
   //     method: 'PATCH',
   //     headers: {
   //         'Content-Type': 'application/json'
@@ -64,52 +64,69 @@ const AuthProvider = ({ children }) => {
       // check whether the user already have a role or not
       // if not then update the role to user
       if (currentUser) {
-        fetch(`http://localhost:5000/user?email=${currentUser.email}`)
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.length === 0) {
-              fetch('http://localhost:5000/user', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                  email: currentUser.email,
-                  role: 'user',
-                  isVerified: false,
-                }),
-              })
-                .then((res) => res.json())
-                .then((data) => {
-                  console.log(data);
-                });
-            }
-          });
-      }
-
-      // verify jwt
-      if (currentUser) {
-        fetch('http://localhost:5000/jwt', {
+        fetch('https://assignment-12-server-side-eta.vercel.app/user', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             email: currentUser.email,
+            role: 'user',
+            isVerified: false,
           }),
         })
           .then((res) => res.json())
           .then((data) => {
-            if (data) {
-              console.log('jwt verified');
-              // set token in local storage
-              localStorage.setItem('token', data.token);
-            }
+            console.log(data);
           });
+        // fetch(
+        //   `https://assignment-12-server-side-eta.vercel.app/user?email=${currentUser.email}`
+        // )
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     if (data.length === 0) {
+        //       fetch('https://assignment-12-server-side-eta.vercel.app/user', {
+        //         method: 'POST',
+        //         headers: {
+        //           'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify({
+        //           email: currentUser.email,
+        //           role: 'user',
+        //           isVerified: false,
+        //         }),
+        //       })
+        //         .then((res) => res.json())
+        //         .then((data) => {
+        //           console.log(data);
+        //         });
+        //     }
+        //   });
       }
 
+      // verify jwt
+      // if (currentUser) {
+      //   fetch('https://assignment-12-server-side-eta.vercel.app/jwt', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify({
+      //       email: currentUser.email,
+      //     }),
+      //   })
+      //     .then((res) => res.json())
+      //     .then((data) => {
+      //       if (data) {
+      //         console.log('jwt verified');
+      //         // set token in local storage
+      //         localStorage.setItem('token', data.token);
+      //       }
+      //     });
+      // }
+
       // patch current user data to database
-      // fetch(`http://localhost:5000/user`, {
+      // fetch(`https://assignment-12-server-side-eta.vercel.app/user`, {
       //     method: 'PATCH',
       //     headers: {
       //         'Content-Type': 'application/json'

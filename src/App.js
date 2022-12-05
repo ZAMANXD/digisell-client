@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import Blogs from './Pages/Blogs/Blogs';
+import BookNow from './Pages/BookNow/BookNow';
 import Broken from './Pages/Broken/Broken';
 import AllBuyers from './Pages/Dashboard/AllBuyers/AllBuyers';
 import AllSellers from './Pages/Dashboard/AllSellers/AllSellers';
@@ -52,8 +53,12 @@ function App() {
           element: <Blogs></Blogs>,
         },
         {
-          path: 'product-datails/:id',
+          path: '/product-details/:id',
           element: <ProductDetails></ProductDetails>,
+          loader: ({ params }) =>
+            fetch(
+              `https://assignment-12-server-side-eta.vercel.app/product/${params.id}`
+            ),
         },
         {
           path: '/category/:id',
@@ -63,7 +68,13 @@ function App() {
             </PrivateRoute>
           ),
           loader: ({ params }) =>
-            fetch(`http://localhost:5000/category/${params.id}`),
+            fetch(
+              `https://assignment-12-server-side-eta.vercel.app/category/${params.id}`
+            ),
+        },
+        {
+          path: '/categoried-card',
+          element: <CategoriedCard></CategoriedCard>,
         },
         {
           path: '*',

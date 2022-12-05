@@ -1,9 +1,8 @@
-// import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../../Utils/Contexts/AuthProvider';
 
-const BookingModal = ({ modalData, setModalVisibility }) => {
+const BookNow = ({ modalData, setModalVisibility }) => {
   const bookingHandler = (e) => {
     e.preventDefault();
 
@@ -54,10 +53,10 @@ const BookingModal = ({ modalData, setModalVisibility }) => {
       <div className="customModal">
         <div className="custom-modal-content">
           <div className="custom-modal-header flex justify-between items-center">
-            <h3 className="text-xl font-bold">{modalData.name}</h3>
+            {/* <h3 className="text-xl font-bold">{modalData.name}</h3> */}
             <button
               className="btn bg-ghost"
-              onClick={() => setModalVisibility(false)}
+              //   onClick={() => setModalVisibility(false)}
             >
               X
             </button>
@@ -182,4 +181,4 @@ const BookingModal = ({ modalData, setModalVisibility }) => {
   );
 };
 
-export default BookingModal;
+export default BookNow;

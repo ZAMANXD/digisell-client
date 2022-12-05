@@ -12,9 +12,9 @@ const Dashboard = () => {
   const { data: loggedInUser = [], isLoading } = useQuery({
     queryKey: ['loggedInUser'],
     queryFn: () =>
-      fetch(`http://localhost:5000/user?email=${user.email}`).then((res) =>
-        res.json()
-      ),
+      fetch(
+        `https://assignment-12-server-side-eta.vercel.app/user?email=${user.email}`
+      ).then((res) => res.json()),
   });
   return (
     <div className="lg:flex">

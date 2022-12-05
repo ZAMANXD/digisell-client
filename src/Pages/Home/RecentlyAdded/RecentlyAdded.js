@@ -6,7 +6,9 @@ const RecentlyAdded = () => {
   const { data: recents = [], isLoading } = useQuery({
     queryKey: ['recents'],
     queryFn: () =>
-      fetch('http://localhost:5000/recents/').then((res) => res.json()),
+      fetch('https://assignment-12-server-side-eta.vercel.app/recents/').then(
+        (res) => res.json()
+      ),
   });
   return (
     <div className="lg:w-5/6 w-full mx-auto py-10">

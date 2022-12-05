@@ -26,7 +26,7 @@ const Register = () => {
         console.log(res);
 
         // post user infomation to mongo database
-        fetch('http://localhost:5000/user', {
+        fetch('https://assignment-12-server-side-eta.vercel.app/user', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

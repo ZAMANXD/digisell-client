@@ -30,7 +30,7 @@ const Login = () => {
 
         // get jwt token
 
-        // fetch('http://localhost:5000/jwt', {
+        // fetch('https://assignment-12-server-side-eta.vercel.app/jwt', {
         //     method: 'POST',
         //     headers: {
         //         'Content-Type': 'application/json'
